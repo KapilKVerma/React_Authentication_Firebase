@@ -1,35 +1,40 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import fire from "./fire";
-import Login from "./Login";
-import Hero from "./Hero";
+import React from "react";
 
 import "./App.css";
 
 function App() {
-  const [user, setUser] = useState("");
-
-  useEffect(() => {
-    authListener();
-  }, []);
-
-  const authListener = () => {
-    fire.auth().onAuthStateChanged((user) => {
-      console.log(user);
-      if (user) {
-        setUser(user);
-      } else {
-        setUser("");
-      }
-    });
-  };
-
   return (
-    <Router>
-      <Route path="/" exact>
-        <div className="App">{user ? <Hero /> : <Login />}</div>
-      </Route>
-    </Router>
+    <React.Fragment>
+      <div
+        style={{
+          padding: "50px",
+          borderRadius: "10px",
+          backgroundColor: "Yellow",
+          margin: "50px",
+          color: "Black",
+          fontSize: "50px",
+          fontFamily: "Arial",
+          fontWeight: "700",
+        }}
+      >
+        Hello World!
+      </div>
+      <div
+        style={{
+          padding: "50px",
+          borderRadius: "10px",
+          backgroundColor: "Yellow",
+          margin: "50px",
+          color: "Black",
+          fontSize: "20px",
+          fontFamily: "Arial",
+          fontWeight: "600",
+        }}
+      >
+        <h2>About Me</h2>I am learning to build web application, which is bit
+        hard, but I will reach there.
+      </div>
+    </React.Fragment>
   );
 }
 
