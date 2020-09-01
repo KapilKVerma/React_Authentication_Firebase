@@ -1,0 +1,6 @@
+.loginForm {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(229, 230, 231);
+}
